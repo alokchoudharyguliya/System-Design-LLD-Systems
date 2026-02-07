@@ -1,3 +1,4 @@
+// Focuses on inheriting from both adaptee and the target and then bringing the adaptee inside the target code
 #include<bits/stdc++.h>
 using namespace std;
 class Target{

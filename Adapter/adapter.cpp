@@ -7,7 +7,7 @@ public:
     virtual ~Target() = default;
     virtual std::string Request() const
     {
-        return "Target";
+        return "\nTarget";
     }
 };
 class Adaptee
@@ -29,7 +29,7 @@ public:
     {
         std::string to_reverse = this->adaptee_->SpecificRequest();
         std::reverse(to_reverse.begin(), to_reverse.end());
-        return "Adapter Translated " + to_reverse;
+        return "- Adapter Translated " + to_reverse;
     }
 };
 
@@ -44,7 +44,7 @@ int main()
     ClientCode(target);
     std::cout << "\n\n";
     Adaptee *adaptee = new Adaptee;
-    std::cout << "Adaptee comes into the game, now i want adaptee to behave just like Target to ensure compatibility";
+    std::cout << "Adaptee comes into the game, now i want adaptee to behave just like Target to ensure compatibility\n";
     std::cout << "Adaptee" << adaptee->SpecificRequest();
     std::cout << "\n\n";
     std::cout<<"After going through the adapter";
