@@ -6,7 +6,7 @@ public:
     std::vector<std::string> parts_;
     void ListParts() const
     {
-        std::cout << "Product parts";
+        std::cout << "Product parts ";
         for (size_t i = 0; i < parts_.size(); i++)
         {
             if (parts_[i] == parts_.back())
@@ -65,16 +65,16 @@ class Director{
         this->builder=builder;
     }
     void BuildMinimalViableProduct(){
-        this->builder->ProdcutPartA();
+        this->builder->ProductPartA();
     }
-    void BuildFullFeatureProduct(){
+    void BuildFullFeaturedProduct(){
         this->builder->ProductPartA();
         this->builder->ProductPartB();
         this->builder->ProductPartC();
     }
 };
 void ClientCode(Director&director){
-    ConcreteBuilder*builder=new ConcreteBuilder1();
+    ConcreteBuilder1*builder=new ConcreteBuilder1();
     director.set_builder(builder);
     std::cout<<"Standard basic product\n";
     director.BuildMinimalViableProduct();
@@ -99,3 +99,5 @@ int main(){
     ClientCode(*director);
     delete director;
 }
+
+// director, will create builder say of type1, will product having parts array, now we can decide what we want to add to parts, using the builder methods, builder -> Part1, Part2, etc, director will store reference to the builder
